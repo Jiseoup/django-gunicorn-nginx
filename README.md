@@ -3,7 +3,7 @@ This document is created with reference to the corresponding [tutorial](https://
 
 ## 1. System Configuration
 I checked that all of the following works correctly in the two system configurations.  
-One is a local environment, one is a cloud environment.
+One is a **local** environment, one is a **cloud** environment.
 * **Local**
     * `Ubuntu 20.04` + `Python 3.8.10` + `PostgreSQL 12.12`
 * **Oracle Cloud**  
@@ -22,7 +22,7 @@ $ sudo apt-get upgrade
 ```
 
 ### Install packages
-This document uses PostgreSQL as the database.
+This document uses `PostgreSQL` as the database.
 ```bash
 $ sudo apt-get install python-is-python3 python3-pip python3-venv python3-dev
 $ sudo apt-get install libpq-dev postgresql postgresql-contrib
@@ -87,13 +87,13 @@ postgres=# \q
 ```bash
 (venv) $ vi conf/settings.py
 ```
-Enter the server address or domain that can connect to django.  
-Addresses are separated by commas.
+Enter the **server address** or **domain** that can connect to Django.  
+Addresses are separated by `commas`.
 ```python
 ALLOWED_HOSTS = ['*']
 ```
 Now modify the database information.  
-As mentioned earlier, this document uses PostgreSQL.
+As mentioned earlier, this document uses `PostgreSQL`.
 ```python
 DATABASES = {
     'default': {
@@ -113,7 +113,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 ```
 
 ### Completing initial setup
-Now we can use the `manage.py` script to migrate the database schema to the PostgreSQL database.
+Now we can use the `manage.py` script to migrate the database schema to the `PostgreSQL` database.
 ```bash
 (venv) $ python manage.py makemigrations
 (venv) $ python manage.py migrate
@@ -127,7 +127,7 @@ Static contents (js, css ...) can be collected using the command below.
 (venv) $ python manage.py collectstatic
 ```
 
-### Open the port (Optional)
+### Open the port (for Cloud Environment)
 If you are using cloud services, please follow the instructions below.  
 Open 8000 ports in the cloud, and the server also generates exceptions for 8000 ports.
 ```bash
