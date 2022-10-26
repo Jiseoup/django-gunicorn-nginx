@@ -53,7 +53,7 @@ $ python -m venv venv
 $ source venv/bin/activate
 ```
 
-## Install pip modules in virtual environment
+### Install pip modules in virtual environment
 ```bash
 (venv) $ pip install django gunicorn
 (venv) $ pip install psycopg2-binary
